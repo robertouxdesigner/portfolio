@@ -77,13 +77,16 @@ html[data-lang="pt"] [lang="en"]{display:none !important;}
 }
 .nav{
   width:100%;max-width:1000px;
-  background:var(--color-surface-black);
+  /* glass: translucent dark surface that blurs whatever scrolls underneath */
+  background:rgba(29,29,31,0.55);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid rgba(255,255,255,0.12);
   border-radius:var(--r-lg);
   display:flex;align-items:center;justify-content:space-between;
   padding:10px 20px;
   color:var(--color-body-on-dark);
 }
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-text);font-weight:600;font-size:15px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-text);font-weight:600;font-size:15px;color:#fff;}
 .brand img{width:22px;height:22px;flex:none;}
 .nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a{
@@ -246,7 +249,7 @@ html[data-lang="pt"] [lang="en"]{display:none !important;}
   gap:36px clamp(24px,6vw,80px);margin-top:var(--sp-lg);
 }
 .companies-row img{
-  height:34px;width:auto;max-width:160px;
+  height:40x;width:auto;max-width:160px;
   object-fit:contain;filter:grayscale(1);opacity:.75;
   transition:opacity .15s ease;
 }
@@ -304,9 +307,12 @@ html[data-lang="pt"] [lang="en"]{display:none !important;}
   display:flex;flex-direction:column;gap:var(--sp-md);
 }
 .project-thumb{
-  aspect-ratio:16/10;border-radius:var(--r-sm);overflow:hidden;background:#fff;
+  aspect-ratio:16/10;border-radius:var(--r-sm);overflow:hidden;background:#fff;position:relative;
 }
-.project-thumb img{width:100%;height:100%;object-fit:cover;}
+.project-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:inset .35s ease,filter .35s ease;}
+/* hover: +2px on each edge, centered, black and white */
+.project-card:hover .project-thumb img,.project-thumb:hover img{inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);filter:grayscale(1);}
+@media (prefers-reduced-motion:reduce){.project-thumb img{transition:none;}}
 .project-card h3{
   font-family:var(--font-text);font-weight:600;font-size:19px;
   letter-spacing:-0.374px;margin:0;color:#fff;
@@ -364,7 +370,7 @@ html[data-lang="pt"] [lang="en"]{display:none !important;}
 .case-summary + .case-summary{margin-top:var(--sp-md);}
 
 .case-gallery{display:flex;flex-direction:column;align-items:center;gap:var(--sp-lg);}
-.case-gallery figure{margin:0;width:100%;max-width:640px;min-width:min(540px,100%);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--color-hairline);background:var(--color-surface-pearl);}
+.case-gallery figure{margin:0;width:100%;max-width:640px;min-width:min(600px,100%);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--color-hairline);background:var(--color-surface-pearl);}
 .case-gallery img{width:100%;height:auto;display:block;}
 .case-gallery figcaption{
   padding:14px 20px;font-size:13px;color:var(--color-ink-muted-48);
@@ -415,4 +421,15 @@ footer{background:var(--color-canvas-parchment);color:var(--color-ink-muted-80);
 @media (max-width:480px){
   .tile{padding:48px 20px;}
   .footer-grid{grid-template-columns:1fr;}
+}
+
+/* ---------- Hero effects (assets/hero-fx.js) ---------- */
+@media (hover:hover) and (pointer:fine){html.fx-cursor,html.fx-cursor *{cursor:none !important;}}
+.hero-watermark,.portrait-oval,.portrait-oval img{will-change:transform;}
+/* 24-column vertical guides, 7% black, top of page down to .marquee-band (height set by JS) */
+body{position:relative;}
+.grid-lines{
+  position:absolute;top:0;left:24px;right:24px;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(to right,rgba(0,0,0,.07) 0 1px,transparent 1px calc(100% / 24));
+  border-right:1px solid rgba(0,0,0,.07);
 }
