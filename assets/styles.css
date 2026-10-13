@@ -379,7 +379,7 @@ html[data-lang="pt"] [lang="en"]{display:none !important;}
 
 .case-top{padding-bottom:var(--sp-xl);}
 .case-title{font-size:clamp(34px,6vw,56px);line-height:1.07;font-weight:600;letter-spacing:-0.02em;margin:var(--sp-xl) 0 0;}
-.case-goal{padding-top:var(--sp-xl);}
+.case-goal{padding-top:var(--sp-section);}
 .case-overview{padding-top:0;}
 .case-meta{margin:0;display:grid;gap:var(--sp-xl);}
 .case-meta>div{border-top:1px solid var(--color-hairline);padding-top:var(--sp-md);display:grid;grid-template-columns:160px 1fr;gap:var(--sp-lg);}
