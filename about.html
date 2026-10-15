@@ -8,8 +8,56 @@
 <link rel="icon" href="assets/img_site/5b94b68947f8b548e93e77e9ae76bd9188ecc7c8.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans:wght@400;600&family=Roboto:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<style>
+/* ===== About — test version, built from the Figma reference (1920px frame) ===== */
+.ab{--ab-gray:#999999;--ab-navy:#21273e;--ab-text:#4d4d4d;--ab-body:#555;--ab-line:#b3b5b8;--ab-wrap:min(1376px,100% - 48px);color:var(--ab-text)}
+.ab-wrap{width:var(--ab-wrap);margin:0 auto}
+.ab-top{background:#eff1f6;padding:clamp(48px,6.25vw,120px) 0 clamp(56px,6.3vw,121px)}
+.ab-rule{border:0;height:1px;background:var(--ab-line);margin:0}
+.ab-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,552px);column-gap:35px;align-items:start;padding-bottom:clamp(56px,7.1vw,136px)}
+.ab-hero h1{margin:0;font-family:"Noto Sans",var(--font-text);font-weight:600;font-size:clamp(32px,2.917vw,56px);line-height:1.357;letter-spacing:0;color:var(--ab-navy)}
+.ab-hero h1 .g{color:var(--ab-gray)}
+.ab-facts{list-style:none;margin:0;padding:0}
+.ab-facts li{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:55px;border-bottom:1px solid #9b9c9f;font-family:Inter,var(--font-text);font-size:16px;line-height:1.3;letter-spacing:0;color:var(--ab-text)}
+.ab-facts li:first-child{min-height:54px}.ab-facts li:last-child{min-height:59px}
+.ab-facts .v{display:inline-flex;align-items:center;gap:6px;text-align:right}
+.ab-facts .ic{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1}
+.ab-facts .ic img{width:14px;height:14px;object-fit:contain}.ab-facts .av{width:22px;height:22px;border-radius:50%;object-fit:cover}
+.ab-sec h2{margin:0;font-family:"Noto Sans",var(--font-text);font-weight:600;font-size:clamp(24px,1.56vw,30px);line-height:1.3;letter-spacing:0;color:#4a4a4a}
+.ab-about{padding-top:clamp(40px,4.3vw,83px)}
+.ab-about .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,2.1vw,40px);margin-top:clamp(20px,1.8vw,35px)}
+.ab-about p{margin:0;font-family:Roboto,Inter,sans-serif;font-size:16px;line-height:24px;letter-spacing:0;color:var(--ab-body)}
+.ab-bottom{background:#f3f3f3;padding-top:clamp(24px,2.2vw,42px);padding-bottom:clamp(80px,20.8vw,399px)}
+.ab-courses{padding-top:clamp(40px,4.4vw,85px);padding-bottom:clamp(40px,4vw,77px)}
+.ab-courses .row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px 20px;margin-top:clamp(32px,4vw,78px)}
+.ab-course{display:flex;align-items:flex-start;gap:9px}
+.ab-course .ck{flex:none;width:20px;height:20px;margin-top:2px}
+.ab-course b{display:block;font-family:Inter,var(--font-text);font-weight:600;font-size:16px;line-height:24px;letter-spacing:0;color:var(--ab-navy)}
+.ab-course span.d{display:block;font-family:"Noto Sans",var(--font-text);font-size:15px;line-height:24px;letter-spacing:0;color:var(--ab-text);margin-top:1px}
+.ab-photos{display:flex;justify-content:center;align-items:flex-start;gap:24px;margin-top:clamp(64px,12.2vw,235px)}
+.ab-photos img{display:block;height:clamp(240px,21vw,404px);width:auto;border-radius:12px;object-fit:cover}
+.ab-photos img:nth-child(1){aspect-ratio:239/404}.ab-photos img:nth-child(2){aspect-ratio:409/404}.ab-photos img:nth-child(3){aspect-ratio:298/404}
+/* tablets / small laptops */
+@media (max-width:1100px){
+  .ab-courses .row{flex-wrap:wrap;justify-content:flex-start;column-gap:40px}
+  .ab-photos{gap:16px}
+}
+/* mobile: everything becomes one vertical column */
+@media (max-width:820px){
+  .ab-hero{grid-template-columns:1fr;row-gap:36px}
+  .ab-facts li{min-height:52px}
+  .ab-about .cols{grid-template-columns:1fr;row-gap:20px}
+  .ab-courses .row{flex-direction:column;gap:22px}
+  .ab-photos{flex-direction:column;align-items:stretch;gap:16px}
+  .ab-photos img{width:100%;max-width:560px;height:auto;margin-inline:auto}
+  .ab-photos img:nth-child(1){aspect-ratio:4/5;object-position:center 30%}
+  .ab-photos img:nth-child(2){aspect-ratio:4/3.4}
+  .ab-photos img:nth-child(3){aspect-ratio:4/5;object-position:center 30%}
+  .ab-bottom{padding-bottom:72px}
+}
+</style>
 </head>
 <body>
 
@@ -39,175 +87,62 @@
   </nav>
 </div>
 
-<main id="main">
+<main id="main" class="ab">
 
-  <!-- Intro -->
-  <section class="tile tile-light hero" style="padding-top:64px;text-align:center;">
-    <div class="tile-inner tile-narrow">
-      <div class="bio-photo" style="width:96px;height:96px;border-radius:50%;margin:0 auto var(--sp-lg);box-shadow:var(--shadow-product);">
-        <img src="assets/img_site/375f2efbe5c9bbce492bd39d7de633fcc7b6e633.png" alt="Beto, small circular portrait">
-      </div>
-      <p class="eyebrow"><span lang="en">About me</span><span lang="pt">Sobre mim</span></p>
-      <h1 style="font-size:34px;max-width:18ch;margin-left:auto;margin-right:auto;">
-        <span lang="en">Design creates culture, products, and transforms lives, and I am a part of this transformation.</span>
-        <span lang="pt">Design cria cultura, produtos e transforma vidas, e eu faço parte dessa transformação.</span>
-      </h1>
+  <div class="ab-top">
+    <div class="ab-wrap">
+      <section class="ab-hero">
+        <h1>
+          <span lang="en"><span class="g">Design creates culture, products, and transforms lives,</span> and I am a part of this transformation.</span>
+          <span lang="pt"><span class="g">Design cria cultura, produtos e transforma vidas,</span> e eu faço parte dessa transformação.</span>
+        </h1>
+        <ul class="ab-facts">
+          <li><span><span lang="en">Food</span><span lang="pt">Comida</span></span><span class="v"><span class="ic" aria-hidden="true">🍖</span><span><span lang="en">Barbecue</span><span lang="pt">Churrasco</span></span></span></li>
+          <li><span><span lang="en">Tool</span><span lang="pt">Ferramenta</span></span><span class="v"><span class="ic" aria-hidden="true"><img src="Figma Brand Assets/Figma Icon (Full-color)/Figma Icon (Full-color).svg" alt=""></span>Figma</span></li>
+          <li><span><span lang="en">Work music</span><span lang="pt">Música para trabalhar</span></span><span class="v"><span class="ic" aria-hidden="true">🎸</span>Jazz</span></li>
+          <li><span><span lang="en">Sport</span><span lang="pt">Esporte</span></span><span class="v"><span class="ic" aria-hidden="true">⚽</span><span><span lang="en">Soccer</span><span lang="pt">Futebol</span></span></span></li>
+          <li><span><span lang="en">Serie</span><span lang="pt">Série</span></span><span class="v"><img class="av" src="assets/img_site/about/avatar.png" alt="">The Office</span></li>
+        </ul>
+      </section>
+      <hr class="ab-rule">
+      <section class="ab-sec ab-about" aria-labelledby="ab-h-about">
+        <h2 id="ab-h-about"><span lang="en">About me</span><span lang="pt">Sobre mim</span></h2>
+        <div class="cols">
+          <p>
+            <span lang="en">With extensive experience in the design field, over the last few years, I have been adding and applying knowledge in Interface Design with a theoretical foundation of UX for digital products aligned with brand positioning. As a leader, I managed a team of designers, with my main responsibilities being task management, co-creating with a Design Thinking approach, and validating deliverables.</span>
+            <span lang="pt">Com ampla experiência na área de design, nos últimos anos venho somando e aplicando conhecimento em Interface Design, com base teórica de UX para produtos digitais alinhados ao posicionamento da marca. Como líder, gerenciei uma equipe de designers, com as principais responsabilidades de gestão de tarefas, cocriação com abordagem de Design Thinking e validação de entregas.</span>
+          </p>
+          <p>
+            <span lang="en">Throughout my career, I have implemented new cultures of digital design processes, using new execution and management. My ambitions are linked to self-awareness, soft and hard skills, with a focus on results, both individually and for the team, always providing a healthy, collaborative, and productive environment.</span>
+            <span lang="pt">Ao longo da minha carreira, implementei novas culturas de processos de design digital, usando novas formas de execução e gestão. Minhas ambições estão ligadas ao autoconhecimento, soft e hard skills, com foco em resultados, tanto individuais quanto da equipe, sempre promovendo um ambiente saudável, colaborativo e produtivo.</span>
+          </p>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 
-  <!-- Fun facts -->
-  <section class="tile tile-parchment">
-    <div class="tile-inner">
-      <p class="eyebrow"><span lang="en">Fun facts</span><span lang="pt">Curiosidades</span></p>
-      <div class="facts-grid">
-        <div class="fact">
-          <p class="fact-label"><span lang="en">Food</span><span lang="pt">Comida</span></p>
-          <p class="fact-value">🍖 <span lang="en">Barbecue</span><span lang="pt">Churrasco</span></p>
+  <div class="ab-bottom">
+    <div class="ab-wrap">
+      <hr class="ab-rule">
+      <section class="ab-sec ab-courses" aria-labelledby="ab-h-courses">
+        <h2 id="ab-h-courses"><span lang="en">My courses</span><span lang="pt">Meus cursos</span></h2>
+        <div class="row">
+          <div class="ab-course"><div><b>Bootcamp UXUI OPEN</b><span class="d"><span lang="en">Coursing the bootcamp online</span><span lang="pt">Cursando o bootcamp online</span></span></div></div>
+          <div class="ab-course"><svg class="ck" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.6" stroke="#18a957" stroke-width="1.6"/><path d="M6.2 10.2l2.7 2.6 5-5.4" stroke="#18a957" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>IBM</b><span class="d">Enterprise Design Thinking</span></div></div>
+          <div class="ab-course"><svg class="ck" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.6" stroke="#18a957" stroke-width="1.6"/><path d="M6.2 10.2l2.7 2.6 5-5.4" stroke="#18a957" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>UX GOOGLE</b><span class="d"><span lang="en">By Coursera</span><span lang="pt">Pela Coursera</span></span></div></div>
+          <div class="ab-course"><svg class="ck" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.6" stroke="#18a957" stroke-width="1.6"/><path d="M6.2 10.2l2.7 2.6 5-5.4" stroke="#18a957" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>UDACITY</b><span class="d">Product Design</span></div></div>
+          <div class="ab-course"><svg class="ck" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.6" stroke="#18a957" stroke-width="1.6"/><path d="M6.2 10.2l2.7 2.6 5-5.4" stroke="#18a957" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>FIAP</b><span class="d">Design Thinking</span></div></div>
+          <div class="ab-course"><svg class="ck" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.6" stroke="#18a957" stroke-width="1.6"/><path d="M6.2 10.2l2.7 2.6 5-5.4" stroke="#18a957" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>UX NOW</b><span class="d">Design Thinking</span></div></div>
         </div>
-        <div class="fact">
-          <p class="fact-label"><span lang="en">Tool</span><span lang="pt">Ferramenta</span></p>
-          <p class="fact-value">Figma</p>
-        </div>
-        <div class="fact">
-          <p class="fact-label"><span lang="en">Work music</span><span lang="pt">Música para trabalhar</span></p>
-          <p class="fact-value">🎸 Jazz</p>
-        </div>
-        <div class="fact">
-          <p class="fact-label"><span lang="en">Sport</span><span lang="pt">Esporte</span></p>
-          <p class="fact-value">⚽ <span lang="en">Soccer</span><span lang="pt">Futebol</span></p>
-        </div>
-        <div class="fact">
-          <p class="fact-label"><span lang="en">Series</span><span lang="pt">Série</span></p>
-          <p class="fact-value">The Office</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="tile tile-dark">
-    <div class="tile-inner">
-      <p class="eyebrow"><span lang="en">My skills</span><span lang="pt">Minhas habilidades</span></p>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3><span lang="en">Product Strategy</span><span lang="pt">Estratégia de Produto</span></h3>
-          <ul>
-            <li>Product Discovery</li>
-            <li>Product Vision</li>
-            <li>Product Roadmap</li>
-            <li>Product Thinking</li>
-            <li>Business Strategy</li>
-            <li>Lean Product</li>
-            <li>Product Metrics</li>
-            <li>Value Proposition</li>
-            <li>Customer Journey Strategy</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3><span lang="en">UX Research</span><span lang="pt">UX Research</span></h3>
-          <ul>
-            <li>User Research</li>
-            <li>Discovery Research</li>
-            <li>Contextual Inquiry</li>
-            <li>Stakeholder Interviews</li>
-            <li>User Interviews</li>
-            <li>Focus Groups</li>
-            <li>Surveys</li>
-            <li>Desk Research</li>
-            <li>Competitive Analysis</li>
-            <li>Persona Creation</li>
-            <li>JTBD</li>
-            <li>User Journey Mapping</li>
-            <li>Empathy Map</li>
-            <li>Affinity Mapping</li>
-            <li>Insight Generation</li>
-            <li>Research Planning</li>
-            <li>Research Synthesis</li>
-            <li>Usability Evaluation</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3><span lang="en">UX Design</span><span lang="pt">UX Design</span></h3>
-          <ul>
-            <li>Information Architecture</li>
-            <li>Interaction Design</li>
-            <li>User Flow</li>
-            <li>Task Flow</li>
-            <li>Wireframing</li>
-            <li>Low Fidelity Prototype</li>
-            <li>High Fidelity Prototype</li>
-            <li>Responsive Design</li>
-            <li>Accessibility</li>
-            <li>Design System</li>
-            <li>UX Writing</li>
-            <li>Microinteractions</li>
-            <li>Usability Testing</li>
-            <li>Heuristic Evaluation</li>
-            <li>Prototype Validation</li>
-          </ul>
-        </div>
+      </section>
+      <hr class="ab-rule">
+      <div class="ab-photos">
+        <img src="assets/img_site/about/photo-1.jpg" alt="Beto smiling with his children, black and white photo">
+        <img src="assets/img_site/about/photo-2.jpg" alt="Two small children sitting in a modern chair, black and white photo">
+        <img src="assets/img_site/about/photo-3.jpg" alt="Beto holding hands with his two children by a wall, black and white photo">
       </div>
     </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="tile tile-light" aria-label="Highlights">
-    <div class="tile-inner">
-      <div class="stats-grid">
-        <div class="stat">
-          <p class="stat-num">20+</p>
-          <p class="stat-label"><span lang="en">Systems</span><span lang="pt">Sistemas</span></p>
-        </div>
-        <div class="stat">
-          <p class="stat-num">10+</p>
-          <p class="stat-label"><span lang="en">Discovery — Lean Inception</span><span lang="pt">Discovery — Lean Inception</span></p>
-        </div>
-        <div class="stat">
-          <p class="stat-num">3+</p>
-          <p class="stat-label"><span lang="en">Leadership in design groups in companies I've worked with</span><span lang="pt">Liderança em grupos de design nas empresas em que atuei</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section class="tile tile-parchment">
-    <div class="tile-inner">
-      <p class="eyebrow"><span lang="en">Certifications</span><span lang="pt">Certificações</span></p>
-      <div class="cert-row">
-        <span class="cert-chip"><span class="dot"></span><strong>Bootcamp UXUI OPEN</strong>&nbsp;— Coursing the bootcamp online</span>
-        <span class="cert-chip"><span class="dot"></span><strong>IBM</strong>&nbsp;— Enterprise Design Thinking</span>
-        <span class="cert-chip"><span class="dot"></span><strong>UX GOOGLE</strong>&nbsp;— By Coursera</span>
-        <span class="cert-chip"><span class="dot"></span><strong>UDACITY</strong>&nbsp;— Product Design</span>
-        <span class="cert-chip"><span class="dot"></span><strong>FIAP</strong>&nbsp;— Design Thinking</span>
-        <span class="cert-chip"><span class="dot"></span><strong>UX NOW</strong>&nbsp;— Design Thinking</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Closing -->
-  <section class="tile tile-dark closing" id="contact">
-    <div class="tile-inner">
-      <img class="mark" src="assets/img_site/5b94b68947f8b548e93e77e9ae76bd9188ecc7c8.png" alt="" width="22" height="22" style="filter:invert(60%) sepia(90%) saturate(2000%) hue-rotate(190deg);">
-      <h2>
-        <span lang="en">Contact me for the next challenge :)</span>
-        <span lang="pt">Fale comigo para o próximo desafio :)</span>
-      </h2>
-      <div class="hero-actions" style="justify-content:center;">
-        <a class="btn-primary" href="mailto:robertomaga3@gmail.com">
-          <span lang="en">Email me</span>
-          <span lang="pt">Enviar e-mail</span>
-        </a>
-        <a class="btn-secondary" href="https://wa.me/5571999228620" target="_blank" rel="noopener">
-          <span lang="en">WhatsApp</span>
-          <span lang="pt">WhatsApp</span>
-        </a>
-      </div>
-      <p style="margin-top:20px;font-size:14px;color:var(--color-body-muted);">
-        robertomaga3@gmail.com · +55 71 99922-8620
-      </p>
-    </div>
-  </section>
+  </div>
 
 </main>
 
